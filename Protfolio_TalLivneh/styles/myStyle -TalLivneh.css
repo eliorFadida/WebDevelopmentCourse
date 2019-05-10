@@ -150,10 +150,6 @@ section /*החלק המכיל את התוכן בדפי האתר*/ {
     margin-bottom: 30%;
 }
 
-section #workpage {
-     display: inline-block;
-    position: static;
-}
 
 h1 /* עיצוב הכותרות באתר כולו*/ {
     font-family: AMATICSC-BOLD;
