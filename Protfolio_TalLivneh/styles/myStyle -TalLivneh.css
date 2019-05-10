@@ -152,7 +152,7 @@ section /*החלק המכיל את התוכן בדפי האתר*/ {
 
 section #workpage {
      display: inline-block;
-    position: fixed;
+    position: static;
 }
 
 h1 /* עיצוב הכותרות באתר כולו*/ {
