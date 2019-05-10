@@ -1,0 +1,281 @@
+﻿
+@font-face/*ולוגו h1 פונט של */ {
+    font-family: 'AMATICSC-BOLD';
+    src: url('../fonts/AMATICSC-BOLD.TTF') format('truetype');
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Heebo')
+/* פונט של תוכן*/{
+font-family: 'Heebo', sans-serif;
+}
+
+body /*גוף האתר*/{
+    direction: rtl;
+    font-family: 'Heebo', sans-serif;
+    background-color: #A6D59F;
+}
+
+#container /*מכיל את כל התכנים באתר container בשם div*/{
+    display: block;
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.headnfoot /*footer וה header אחראי על עיצוב כללי של ה "headnfoot" בשם class*/{
+    display: block;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+}
+
+header {
+height: 20%;
+}
+
+footer {
+    top: 90%; /*מראש העמוד footer המרחק של ה*/
+    height: 10%;
+}
+
+
+.headnfoot > a /*footer וה header כל מה שמשמש כקישור ב*/ {
+    display: inline-block;
+    width: 30%;
+    float: right;
+    margin: 0 auto;
+    margin-right: 2%;
+}
+
+
+header #logo /*לוגו האתר*/ {
+    background-image: url('../images/header logo.png');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 90%;
+    margin-top: 0.5%;
+}
+
+
+header nav /*header כלל תפריטי הניווט של */ {
+    display: inline-block;
+    width: 60%;
+    height: 90%;
+    color: gray;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+nav > ul /*header תפריט הניווט הראשי של */ {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    min-width: 90%;
+    height: 90%;
+    margin: 0.5% 0.5% 0.5% 0.5%;
+}
+
+
+    nav ul li /*header הכפתורים בכלל תפריטי הניווט ב*/ {
+        display: inline-block;
+        background-color: #A6D59F;
+        position: inherit;
+        width: auto;
+        min-width: 20%;
+        height: auto;
+        margin: 5% 3%;
+        box-shadow: lightgray -2px -2px;
+        color: dimgray;
+    }
+
+nav ul a /*header הקישורים עצמם שעל הכפתורים בכלל תפריטי הניווט ב*/ {
+    width: 100%;
+    margin: 0% 0%;
+    height: 30%;
+}
+
+.thepage /*מכיל את כל התכנים באתר thepage בשם class*/ {
+    background-color: #E5F2E5;
+}
+nav ul li a /*אחראי לבטל סימנים של קישור בכיתוב הכפתורים*/ {
+    text-decoration: none;
+}
+
+nav ul a :hover /*אינטראקציה במעבר עכבר על כפתורי תפריט*/ {
+    color: black;
+}
+
+nav ul a :active /*אינטראקציה בלחיצה על כפתורי תפריט*/ {
+    box-shadow: none;
+}
+
+#innermenu /*עיצוב פרטני לתפריט משני*/ {
+    display: none;
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+}
+
+    #innermenu > a /*עיצוב פרטני לכפתורי התפריט המשני*/ {
+        display: block;
+        position: static;
+        vertical-align: middle;
+    }
+
+        #innermenu > a li /*עיצוב פרטני לכיתוב התפריט המשני*/ {
+            width: 100%;
+            margin: 2% -52% 0% 0%;
+            box-shadow: lightgray -2px -2px;
+        }
+
+
+header nav > ul li:hover > #innermenu /*אחראי להופעה של תפריט הניווט המשני בעת מעבר על הכפתור הרלוונטי*/ {
+    display: block;
+}
+
+
+section /*החלק המכיל את התוכן בדפי האתר*/ {
+    display: inline-block;
+    position: static;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: dimgray;
+    margin-bottom: 30%;
+}
+
+h1 /* עיצוב הכותרות באתר כולו*/ {
+    font-family: AMATICSC-BOLD;
+}
+
+section .description /*עיצוב החלק של התיאור בכל אחד מדפי האתר*/ {
+    display: inline-block;
+    position: static;
+    background-color: white;
+    width: 80%;
+    margin-top: 11.5%;
+    padding: 0% 2% 2% 2%;
+}
+
+    section .description #index /*עיצוב פרטני לחלק של התיאור בדף הראשי*/ {
+        font-size: 16px;
+    }
+
+div#contactsection .description /*עיצוב פרטני לחלק של התיאור בדף יצירת הקשר*/ {
+    margin-bottom: 20%;
+}
+
+section .description::first-line /*עיצוב הכותרות פרטני לדפי התוצרים*/ {
+    font-size: 40px;
+}
+
+
+section .media /*עיצוב החלק בו מופיעה כלל המדיה בדפי התוצרים*/ {
+    display: inline-block;
+    position: static;
+    width: 100%;
+    padding: 1% 1% 1% 1%;
+}
+
+#media #gif /*עיצוב פרטני לכלל המדיה של דף האנימציה*/ {
+    margin: 2% auto 20% auto;
+    border: 0.5px solid dimgray;
+    width: 40%;
+}
+
+.mediaIMG /*עיצוב פרטני לכלל התמונות שנמצאות בתוך המדיה של דפי התוצרים*/ {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#imageTikshoret /*עיצוב פרטני לתמונה של דף תקשורת חזותית*/ {
+    background-image: url('../images/imageTikshoret.jpg');
+    width: 800px;
+    height: 400px;
+    margin-bottom: -5%;
+    margin-top: 3%;
+}
+
+
+#illustraitorIMG /*עיצוב פרטני לתמונה של דף אילוסטרייטור*/ {
+    background-image: url('../images/poster.jpg');
+    width: 400px;
+    height: 400px;
+    margin: 3% -3% -5% 6%;
+}
+
+#photoshopIMG /*עיצוב פרטני לתמונה של דף פוטושופ*/ {
+    background-image: url('../images/photoshopIMG.jpg');
+    width: 800px;
+    height: 400px;
+    margin: 3% -3% -5% 6%;
+}
+
+
+#contact #content /*עיצוב תיבת התוכן בדף יצירת הקשר*/ {
+    display: inline-block;
+    margin-top: 3px;
+    padding-bottom: 50px;
+    align-content: inherit;
+}
+
+#sendForm /*עיצוב כפתור השליחה בדף יצירת הקשר*/ {
+    font-family: 'AMATICSC-BOLD';
+    background-color: #E5F2E5;
+    color: dimgray;
+    font-size: 20px;
+}
+
+    #sendForm:hover /*עיצוב כפתור השליחה באינטראקציית מעבר עכבר בדף יצירת הקשר*/ {
+        font-family: 'AMATICSC-BOLD';
+        background-color: #E5F2E5;
+        color: black;
+        font-size: 20px;
+    }
+
+footer.headnfoot #footericon /*footerשמכיל את האייקונים ב div עיצוב ה*/ {
+    margin-right: 7%;
+}
+
+.headnfoot #footericon a /*footer עיצוב האייקונים בעלי הקישורים ב*/ {
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 3%;
+    height: 80%;
+    margin-left: 1%;
+    margin-top: 1%;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#footericon a:hover /*באינטראקציית מעבר עכבר footerעיצוב כלל האייקונים בעלי הקישורים ב*/ {
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 4%;
+    height: 80%;
+}
+
+#phoneimg /*footer פרטני לאייקון הטלפון ב*/ {
+    background-image: url('../images/call_top.png');
+}
+
+#mailimg /*footer פרטני לאייקון המייל ב*/ {
+    background-image: url('../images/email.jpg');
+}
+
+#faceimg /*footer פרטני לאייקון הפייסבוק ב*/ {
+    background-image: url('../images/facebook.png');
+}
+
