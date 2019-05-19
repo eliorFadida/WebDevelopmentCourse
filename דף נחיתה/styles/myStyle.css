@@ -1,0 +1,168 @@
+﻿body {
+    direction: rtl;
+    font-family: 'Heebo', sans-serif;
+}
+
+#container {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1000px;
+    background-color: #018285;
+    font-size:20px;
+}
+
+header {
+    display: inline-block;
+    position: static;
+    width: 100%;
+    height: 40%;
+    background-color: white;
+    font-size: 40px;
+}
+
+    header > div {
+        display: inline-block;
+        position: absolute;
+        float: left;
+    }
+
+#logo {
+    background-image: url('../images/h.i.t logo.png');
+    background-size: contain;
+    background-repeat:no-repeat;
+    width: 10%;
+    height: 10%;
+    margin: 0.5% 0.5% 2% 0%;
+}
+
+
+
+header div.description {
+    width: 40%;
+    height: 40%;
+    margin: 0% 10% 0% 0%;
+    padding: 0% 2% 4% 2%;
+    text-align: center;
+}
+
+#firstline {
+    font-size: 40px;
+}
+
+#secondline {
+    font-size: 50px;
+}
+
+header div.img {
+    display: inline-block;
+    position: static;
+    background-image: url('../images/header.img.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 95%;
+    margin-top: 0.5%;
+    margin-left: 5%;
+}
+
+section {
+    height:60%;
+}
+
+section div.description {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    width: 45%;
+    margin-right:5%;
+    margin-top: 1%;
+    font-size: 20px;
+}
+
+
+    section div.description span {
+        font-size: 35px;
+    }
+
+.bold {
+    font-size: 50px;
+}
+
+
+section div.contactform {
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    width: 35%;
+    margin-right: 5%;
+    margin-top: 2%;
+    border: solid black 2px;
+}
+
+        section div.contactform span {
+            display: inline-block;
+            position: static;
+            background-image: url('../images/text-us.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 50%;
+            padding: 10px 10px 20px 10px;
+            font-size: 20px;
+            margin-top:3%;
+
+        }
+
+        section div.contactform label {
+            display: inline-block;
+            position: static;
+            background-image: url('../images/text-you.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding: 10px 10px 20px 20px;
+            font-size: 20px;
+            width: 70%;
+
+        }
+
+            #sendForm {
+    font-family: Heebo;
+    font-size: 30px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+footer {
+    display: inline-block;
+    position: static;
+    padding-top: 3%;
+    padding-right: 2%;
+    width: 100%;
+    background-color: white;
+    font-size: 40px;
+    font-style: bold;
+}
+
+
+#video {
+    margin-top: 3%;
+}
+
+
+    footer .description{
+        display: inline-block;
+        position: inherit;
+        border-color: black;
+        width: 50%;
+        height: inherit;
+        float: left;
+        margin-top: -33%;
+        margin-left: -10%;
+    }
+
+
+        footer .description a {
+            display: inline-block;
+        }
+
+
