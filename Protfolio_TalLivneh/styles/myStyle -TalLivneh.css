@@ -141,7 +141,7 @@ header nav > ul li:hover > #innermenu /*אחראי להופעה של תפריט 
 
 
 section /*החלק המכיל את התוכן בדפי האתר*/ {
-    display: inline-block;
+    display: block;
     position: static;
     width: 100%;
     text-align: center;
