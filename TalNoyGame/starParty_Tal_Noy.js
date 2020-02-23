@@ -10723,9 +10723,11 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 				forcombo.startbtn.removeEventListener("click", fl_ClickToPosition);
 				forcombo.startbtn.removeEventListener("mouseover", btnMouseOver);
 				forcombo.startbtn.removeEventListener('mouseout', btnMouseOut);
+				forcombo.startbtn.cursor = "auto";
 			} else {
 				//בכל בחירה אחרת - כלומר בחר נושא תקין, נאפשר לחיצה
 				forcombo.startbtn.alpha = 1;
+				forcombo.startbtn.cursor = "pointer";
 				forcombo.startbtn.addEventListener("click", fl_ClickToPosition);
 				forcombo.startbtn.addEventListener("mouseover", btnMouseOver);
 				forcombo.startbtn.addEventListener('mouseout', btnMouseOut);
