@@ -12143,8 +12143,8 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		
 		function off_music(evt) {
 			music = false;
-			music_sign.addEventListener('click', sound_stop_func("background_sound"));
-			music_sign.removeEventListener('click', sound_stop_func("background_sound"));
+			//music_sign.addEventListener('click', sound_stop_func("background_sound"));
+			//music_sign.removeEventListener('click', sound_stop_func("background_sound"));
 			music_sign.removeEventListener('click', off_music);
 			music_sign.addEventListener('click', on_music);
 			evt.currentTarget.gotoAndStop(1);
@@ -12152,8 +12152,8 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		
 		function on_music(evt) {
 			music = true;
-			music_sign.addEventListener('click', sound_func("background_sound"));
-			music_sign.removeEventListener('click', sound_func("background_sound"));
+			//music_sign.addEventListener('click', sound_func("background_sound"));
+			//music_sign.removeEventListener('click', sound_func("background_sound"));
 			music_sign.removeEventListener('click', on_music);
 			music_sign.addEventListener('click', off_music);
 			evt.currentTarget.gotoAndStop(0);
