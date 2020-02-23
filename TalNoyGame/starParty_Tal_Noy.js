@@ -11469,7 +11469,6 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 				alien1.name = "alien" + i;
 				alienArray[i] = alien1.name;
 			}
-			nextbtn.addEventListener("click", changePlayer);
 			changePlayer();
 		}
 		
@@ -11489,6 +11488,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 				otherAlien = stage.getChildByName(alienArray[i]);
 				otherAlien.gotoAndStop(0);
 			}
+			nextbtn.addEventListener("click", changePlayer);
 		}
 		
 		//פונקציה שמשנה את השחקן והנתונים בהתאם
@@ -11527,6 +11527,8 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 			stage.getChildByName("sign_" + player).gotoAndStop(2);
 			stage.getChildByName("sign_" + player).alpha = 1;
 			if (myGame.length >= 1) {
+			nextbtn.addEventListener("click", sound_func("jumpAlien"));
+			nextbtn.removeEventListener("click", sound_func("jumpAlien"));
 				next_question();
 			} else {
 				endFunc();
@@ -11536,8 +11538,6 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		//פונקציה שיוצרת שאלה מתוך המערך
 		function next_question() {
 			spaceship.removeChild(feedback_sign);
-			nextbtn.addEventListener("click", sound_func("jumpAlien"));
-			nextbtn.removeEventListener("click", sound_func("jumpAlien"));
 			stage.removeChild(nextbtn);
 			//המשתנה שקובע את פעולת הטיקר
 			option = 1;
