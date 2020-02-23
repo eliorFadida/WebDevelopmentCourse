@@ -11538,6 +11538,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		function next_question() {
 			spaceship.removeChild(feedback_sign);
 			nextbtn.addEventListener("click", sound_func("jumpAlien"));
+			nextbtn.removeEventListener("click", sound_func("jumpAlien"));
 			stage.removeChild(nextbtn);
 			//המשתנה שקובע את פעולת הטיקר
 			option = 1;
@@ -11669,7 +11670,6 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		function endFunc() {
 			gradeSum();
 			createjs.Ticker.removeEventListener("tick", ticker_func);
-			nextbtn.removeEventListener("click", sound_func("jumpAlien"));
 			nextbtn.addEventListener("click", sound_func("disco"));
 			stage.getChildByName("head_line").visible = true;
 			stage.getChildByName("party").visible = true;
