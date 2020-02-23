@@ -11278,7 +11278,6 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 			nextbtn.y = stageH / 2;
 			nextbtn.addEventListener('mouseover', btnMouseOver);
 			nextbtn.addEventListener('mouseout', btnMouseOut);
-			nextbtn.cursor = "pointer";
 			
 			timeIsUp = false;
 			spaceship = new lib.spaceship;
