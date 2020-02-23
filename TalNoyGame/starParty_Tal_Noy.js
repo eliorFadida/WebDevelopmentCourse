@@ -10723,11 +10723,9 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 				forcombo.startbtn.removeEventListener("click", fl_ClickToPosition);
 				forcombo.startbtn.removeEventListener("mouseover", btnMouseOver);
 				forcombo.startbtn.removeEventListener('mouseout', btnMouseOut);
-				forcombo.startbtn.cursor = "auto";
 			} else {
 				//בכל בחירה אחרת - כלומר בחר נושא תקין, נאפשר לחיצה
 				forcombo.startbtn.alpha = 1;
-				forcombo.startbtn.cursor = "pointer";
 				forcombo.startbtn.addEventListener("click", fl_ClickToPosition);
 				forcombo.startbtn.addEventListener("mouseover", btnMouseOver);
 				forcombo.startbtn.addEventListener('mouseout', btnMouseOut);
@@ -11189,7 +11187,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		var answer_direction;
 		var answer_bottom;
 		var background;
-		
+		var ticker;
 		//מערך המכיל את קבצי הסאונד
 		var sounds;
 		
@@ -11274,13 +11272,14 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 			backstory = new lib.backstory();
 			backstory.x = stageW / 2;
 			backstory.y = stageH / 2;
-			
+		
 			nextbtn = new lib.nextbtn;
 			nextbtn.x = stageW / 2;
 			nextbtn.y = stageH / 2;
 			nextbtn.addEventListener('mouseover', btnMouseOver);
 			nextbtn.addEventListener('mouseout', btnMouseOut);
-			
+			nextbtn.cursor = "pointer";
+			ticker = 0;
 			timeIsUp = false;
 			spaceship = new lib.spaceship;
 			earth = new lib.earth;
@@ -11428,8 +11427,6 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		
 		//פונקציה ליצירת האובייקטים במשחק
 		function startGame() {
-			//checkbtn.addEventListener('click', sound_func("background_sound"));
-		
 			stage.removeChild(backstory);
 			stage.getChildByName("head_line").visible = false;
 			stage.getChildByName("sign_1").visible = true;
@@ -11443,6 +11440,8 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		
 		//פונקציה שיוצרת חייזרים לפי מספר השאלות
 		function create_aliens() {
+			checkbtn.addEventListener('click', sound_func("background_sound"));
+			checkbtn.removeEventListener('click', sound_func("background_sound"));
 			//checkbtn.removeEventListener('click', sound_func("background_sound"));
 			for (i = 0; i < myGame.length; i++) {
 		
@@ -11471,6 +11470,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 				alien1.name = "alien" + i;
 				alienArray[i] = alien1.name;
 			}
+			nextbtn.addEventListener("click", changePlayer);
 			changePlayer();
 		}
 		
@@ -11490,7 +11490,6 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 				otherAlien = stage.getChildByName(alienArray[i]);
 				otherAlien.gotoAndStop(0);
 			}
-			nextbtn.addEventListener("click", changePlayer);
 		}
 		
 		//פונקציה שמשנה את השחקן והנתונים בהתאם
@@ -11529,8 +11528,6 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 			stage.getChildByName("sign_" + player).gotoAndStop(2);
 			stage.getChildByName("sign_" + player).alpha = 1;
 			if (myGame.length >= 1) {
-			nextbtn.addEventListener("click", sound_func("jumpAlien"));
-			nextbtn.removeEventListener("click", sound_func("jumpAlien"));
 				next_question();
 			} else {
 				endFunc();
@@ -11539,7 +11536,11 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		}
 		//פונקציה שיוצרת שאלה מתוך המערך
 		function next_question() {
+			ticker = 0;
+			//nextbtn.removeEventListener("click", setTimeout(function(){sound_func("10secTicker")},(20000)));
 			spaceship.removeChild(feedback_sign);
+			nextbtn.addEventListener("click", sound_func("jumpAlien"));
+			nextbtn.removeEventListener("click", sound_func("jumpAlien"));
 			stage.removeChild(nextbtn);
 			//המשתנה שקובע את פעולת הטיקר
 			option = 1;
@@ -11671,6 +11672,9 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		function endFunc() {
 			gradeSum();
 			createjs.Ticker.removeEventListener("tick", ticker_func);
+			nextbtn.removeEventListener("click", sound_func("jumpAlien"));
+			nextbtn.addEventListener("click", sound_stop_func("background_sound"));
+			nextbtn.removeEventListener("click", sound_stop_func("background_sound"));
 			nextbtn.addEventListener("click", sound_func("disco"));
 			stage.getChildByName("head_line").visible = true;
 			stage.getChildByName("party").visible = true;
@@ -11852,13 +11856,11 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		//פונקציה שפועלת במעבר עכבר על תשובה
 		function answer_mouseover(evt) {
 			if (ansewr_posible == 1) {
-				evt.currentTarget.cursor = "pointer";
 				evt.currentTarget.addEventListener("mouseover", sound_func("mouseOver_sound"));
 				evt.currentTarget.scaleX = 1.04;
 				evt.currentTarget.scaleY = 1.04;
 				evt.currentTarget.removeEventListener("mouseover", sound_func("mouseOver_sound"));
 			}
-			else {evt.currentTarget.cursor = "auto";}
 		}
 		
 		//פונקציה שפועלת ביציאה ממעבר עכבר
@@ -12048,12 +12050,16 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		
 		function sound_func(whatSound) {
 			if (music == true) {
-				var instance = createjs.Sound.play(whatSound);
-				if (whatSound == "background_sound") {
-					instance.loop = true;
+					var instance = createjs.Sound.play(whatSound);
+					if (whatSound == "background_sound") {
+						setTimeout(function () {
+							sound_func("background_sound")
+						}, 32000);
+					}
 				}
 			}
-		}
+		
+		
 		
 		function sound_stop_func(whatSound) {
 			var instance = createjs.Sound.stop(whatSound);
@@ -12157,8 +12163,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		
 		function off_music(evt) {
 			music = false;
-			//music_sign.addEventListener('click', sound_stop_func("background_sound"));
-			//music_sign.removeEventListener('click', sound_stop_func("background_sound"));
+			createjs.Sound.muted = true;
 			music_sign.removeEventListener('click', off_music);
 			music_sign.addEventListener('click', on_music);
 			evt.currentTarget.gotoAndStop(1);
@@ -12166,8 +12171,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		
 		function on_music(evt) {
 			music = true;
-			//music_sign.addEventListener('click', sound_func("background_sound"));
-			//music_sign.removeEventListener('click', sound_func("background_sound"));
+			createjs.Sound.muted = false;
 			music_sign.removeEventListener('click', on_music);
 			music_sign.addEventListener('click', off_music);
 			evt.currentTarget.gotoAndStop(0);
@@ -12208,33 +12212,33 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/CachedBmp_965.png?1582471805618", id:"CachedBmp_965"},
-		{src:"images/CachedBmp_860.png?1582471805618", id:"CachedBmp_860"},
-		{src:"images/CachedBmp_407.png?1582471805618", id:"CachedBmp_407"},
-		{src:"images/CachedBmp_406.png?1582471805618", id:"CachedBmp_406"},
-		{src:"images/CachedBmp_405.png?1582471805618", id:"CachedBmp_405"},
-		{src:"images/CachedBmp_334.png?1582471805618", id:"CachedBmp_334"},
-		{src:"images/CachedBmp_333.png?1582471805618", id:"CachedBmp_333"},
-		{src:"images/CachedBmp_332.png?1582471805618", id:"CachedBmp_332"},
-		{src:"images/CachedBmp_331.png?1582471805618", id:"CachedBmp_331"},
-		{src:"images/CachedBmp_250.png?1582471805618", id:"CachedBmp_250"},
-		{src:"images/CachedBmp_249.png?1582471805618", id:"CachedBmp_249"},
-		{src:"images/CachedBmp_248.png?1582471805618", id:"CachedBmp_248"},
-		{src:"images/CachedBmp_245.png?1582471805618", id:"CachedBmp_245"},
-		{src:"images/starParty_Tal_Noy_atlas_.png?1582471805150", id:"starParty_Tal_Noy_atlas_"},
-		{src:"images/starParty_Tal_Noy_atlas_2.png?1582471805151", id:"starParty_Tal_Noy_atlas_2"},
-		{src:"images/starParty_Tal_Noy_atlas_3.png?1582471805152", id:"starParty_Tal_Noy_atlas_3"},
-		{src:"images/starParty_Tal_Noy_atlas_4.png?1582471805153", id:"starParty_Tal_Noy_atlas_4"},
-		{src:"images/starParty_Tal_Noy_atlas_5.png?1582471805154", id:"starParty_Tal_Noy_atlas_5"},
-		{src:"images/starParty_Tal_Noy_atlas_6.png?1582471805156", id:"starParty_Tal_Noy_atlas_6"},
-		{src:"images/starParty_Tal_Noy_atlas_7.png?1582471805159", id:"starParty_Tal_Noy_atlas_7"},
-		{src:"images/starParty_Tal_Noy_atlas_8.png?1582471805167", id:"starParty_Tal_Noy_atlas_8"},
-		{src:"images/starParty_Tal_Noy_atlas_9.png?1582471805183", id:"starParty_Tal_Noy_atlas_9"},
-		{src:"https://code.jquery.com/jquery-3.4.1.min.js?1582471805618", id:"lib/jquery-3.4.1.min.js"},
-		{src:"components/sdk/anwidget.js?1582471805618", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1582471805618", id:"an.TextInput"},
-		{src:"components/ui/src/textinput.js?1582471805618", id:"an.TextInput"},
-		{src:"components/ui/src/combobox.js?1582471805618", id:"an.ComboBox"}
+		{src:"images/CachedBmp_965.png?1582486915560", id:"CachedBmp_965"},
+		{src:"images/CachedBmp_860.png?1582486915560", id:"CachedBmp_860"},
+		{src:"images/CachedBmp_407.png?1582486915560", id:"CachedBmp_407"},
+		{src:"images/CachedBmp_406.png?1582486915560", id:"CachedBmp_406"},
+		{src:"images/CachedBmp_405.png?1582486915560", id:"CachedBmp_405"},
+		{src:"images/CachedBmp_334.png?1582486915560", id:"CachedBmp_334"},
+		{src:"images/CachedBmp_333.png?1582486915560", id:"CachedBmp_333"},
+		{src:"images/CachedBmp_332.png?1582486915560", id:"CachedBmp_332"},
+		{src:"images/CachedBmp_331.png?1582486915560", id:"CachedBmp_331"},
+		{src:"images/CachedBmp_250.png?1582486915560", id:"CachedBmp_250"},
+		{src:"images/CachedBmp_249.png?1582486915560", id:"CachedBmp_249"},
+		{src:"images/CachedBmp_248.png?1582486915560", id:"CachedBmp_248"},
+		{src:"images/CachedBmp_245.png?1582486915560", id:"CachedBmp_245"},
+		{src:"images/starParty_Tal_Noy_atlas_.png?1582486915009", id:"starParty_Tal_Noy_atlas_"},
+		{src:"images/starParty_Tal_Noy_atlas_2.png?1582486915010", id:"starParty_Tal_Noy_atlas_2"},
+		{src:"images/starParty_Tal_Noy_atlas_3.png?1582486915010", id:"starParty_Tal_Noy_atlas_3"},
+		{src:"images/starParty_Tal_Noy_atlas_4.png?1582486915010", id:"starParty_Tal_Noy_atlas_4"},
+		{src:"images/starParty_Tal_Noy_atlas_5.png?1582486915011", id:"starParty_Tal_Noy_atlas_5"},
+		{src:"images/starParty_Tal_Noy_atlas_6.png?1582486915012", id:"starParty_Tal_Noy_atlas_6"},
+		{src:"images/starParty_Tal_Noy_atlas_7.png?1582486915013", id:"starParty_Tal_Noy_atlas_7"},
+		{src:"images/starParty_Tal_Noy_atlas_8.png?1582486915016", id:"starParty_Tal_Noy_atlas_8"},
+		{src:"images/starParty_Tal_Noy_atlas_9.png?1582486915026", id:"starParty_Tal_Noy_atlas_9"},
+		{src:"https://code.jquery.com/jquery-3.4.1.min.js?1582486915560", id:"lib/jquery-3.4.1.min.js"},
+		{src:"components/sdk/anwidget.js?1582486915560", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1582486915560", id:"an.TextInput"},
+		{src:"components/ui/src/textinput.js?1582486915560", id:"an.TextInput"},
+		{src:"components/ui/src/combobox.js?1582486915560", id:"an.ComboBox"}
 	],
 	preloads: []
 };
