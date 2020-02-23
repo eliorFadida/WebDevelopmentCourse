@@ -11850,11 +11850,13 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		//פונקציה שפועלת במעבר עכבר על תשובה
 		function answer_mouseover(evt) {
 			if (ansewr_posible == 1) {
+				evt.currentTarget.cursor = "pointer";
 				evt.currentTarget.addEventListener("mouseover", sound_func("mouseOver_sound"));
 				evt.currentTarget.scaleX = 1.04;
 				evt.currentTarget.scaleY = 1.04;
 				evt.currentTarget.removeEventListener("mouseover", sound_func("mouseOver_sound"));
 			}
+			else {evt.currentTarget.cursor = "auto";}
 		}
 		
 		//פונקציה שפועלת ביציאה ממעבר עכבר
