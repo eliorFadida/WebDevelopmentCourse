@@ -28,7 +28,7 @@ iframe {
 }
 
 header {
-    background-color: #3E275C;
+    background-color: #23094C;
     width: 100%;
     height: 45px;
     position: relative;
@@ -36,30 +36,25 @@ header {
     display: block;
     direction: rtl;
     z-index: 3;
+    margin-top: -5px;
 }
 
-    /*כותרת משחק*/
-    header > a > p {
-        font-family: 'Assistant', sans-serif;
-        font-size: 12pt;
-       font-weight: 600;
-        position: relative;
-        top: -20px;
-        color: white;
-        display: inline-block;
-        direction: rtl;
-    }
 
 /*לוגו*/
-#logo {
+#logo, #headline {
     width: 35px;
     height: 35px;
-    padding: 5px 15px;
+    padding: 5px 5px;
     direction: rtl;
 }
 
+ #headline {
+    width: 200px;
+    height: 35px;
+}
+
 nav {
-    margin-top: -70px;
+    margin-top: -60px;
     margin-left: 10px;
     direction: rtl;
 }
@@ -79,7 +74,7 @@ nav {
                 display: block;
                 color: white;
                 text-align: center;
-                padding: 3px 10px;
+                padding: 5px 10px;
                 font-weight: 400;
                 font-size: 12pt;
                 font-family: 'Assistant', sans-serif;
@@ -102,7 +97,8 @@ nav {
     top: 60px;
     z-index: 4;
     text-align: center;
-    width: 700px;
+    font-weight: 600;
+    width: 500px;
     border-radius: 25px;
     padding: 10px;
     padding-bottom: 25px;
@@ -111,11 +107,11 @@ nav {
     margin-right: auto;
     margin-left: auto;
     direction: rtl;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 
-    .popUp img {
+    .popUp a img {
         width: 90px;
     }
 
@@ -127,6 +123,14 @@ nav {
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
     }
+
+#howToPlayDiv img {
+    width: 50px;
+}
+
+a.closeHowToPlay:hover, a.closeAbout:hover {
+    cursor: pointer;
+}
 
 @-webkit-keyframes bounceInDown {
     0%, 60%, 75%, 90%, 100% {
