@@ -11220,43 +11220,43 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		
 			sounds = [
 				[
-					"/sounds/background_sound.mp3",
+					"sounds/background_sound.mp3",
 					"background_sound"
 				],
 				[
-					"/sounds/no.mp3",
+					"sounds/no.mp3",
 					"no"
 				],
 				[
-					"/sounds/yes.mp3",
+					"sounds/yes.mp3",
 					"yes"
 				],
 				[
-					"/sounds/answerClick_sound.mp3",
+					"sounds/answerClick_sound.mp3",
 					"answerClick_sound"
 				],
 				[
-					"/sounds/jumpAlien.mp3",
+					"sounds/jumpAlien.mp3",
 					"jumpAlien"
 				],
 				[
-					"/sounds/spaceInStar.mp3",
+					"sounds/spaceInStar.mp3",
 					"spaceInStar"
 				],
 				[
-					"/sounds/mouse_over.mp3",
+					"sounds/mouse_over.mp3",
 					"mouseOver_sound"
 				],
 				[
-					"/sounds/disco.mp3",
+					"sounds/disco.mp3",
 					"disco"
 				],
 				[
-					"/sounds/10secTicker.mp3",
+					"sounds/10secTicker.mp3",
 					"10secTicker"
 				],
 				[
-					"/sounds/lotoSound.wav",
+					"sounds/lotoSound.wav",
 					"loto"
 				]
 			];
