@@ -11416,6 +11416,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 			}
 		
 			init();
+	
 		}
 		
 		//פונקציה ליצירת סאונד
@@ -12057,7 +12058,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 						setTimeout(function () {
 							sound_func("background_sound")
 						}, 32000);}
-						else{instance = createjs.Sound.stop(whatSound);}
+						else{sound_stop_func("background_sound");}
 					}
 				}
 			}
