@@ -11221,7 +11221,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		
 			sounds = [
 				[
-					"sounds/background_sound.wav",
+					"sounds/background_sound.mp3",
 					"background_sound"
 				],
 				[
