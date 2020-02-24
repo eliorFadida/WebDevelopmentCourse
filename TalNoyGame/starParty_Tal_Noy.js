@@ -11295,7 +11295,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		
 			stop = false;
 			music = true;
-		gameEnd=false;
+		        gameEnd=false;
 			txt = new createjs.Text();
 			txt.font = "18px arial";
 		
@@ -12057,6 +12057,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 						setTimeout(function () {
 							sound_func("background_sound")
 						}, 32000);}
+						else{instance = createjs.Sound.stop(whatSound);}
 					}
 				}
 			}
