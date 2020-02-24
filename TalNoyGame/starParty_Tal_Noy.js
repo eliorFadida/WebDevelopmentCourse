@@ -12055,7 +12055,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 						if(endScene.visible == false){
 						setTimeout(function () {
 							sound_func("background_sound")
-						}}, 32000);
+						}, 32000);}
 					}
 				}
 			}
