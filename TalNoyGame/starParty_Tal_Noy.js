@@ -12052,9 +12052,10 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 			if (music == true) {
 					var instance = createjs.Sound.play(whatSound);
 					if (whatSound == "background_sound") {
+						if(endScene.visible == false){
 						setTimeout(function () {
 							sound_func("background_sound")
-						}, 32000);
+						}}, 32000);
 					}
 				}
 			}
