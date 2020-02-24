@@ -12152,7 +12152,8 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 				if (stop == true) {
 					if(check!=0){
 					checkbtn.visible = true;}
-					createjs.Sound.muted = false;
+					if (music==true){
+					createjs.Sound.muted = false;}
 					createjs.Ticker.paused = false;
 					stop_play.gotoAndStop(0);
 					for (i = 0; i < myGame.length; i++) {
