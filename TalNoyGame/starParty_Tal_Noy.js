@@ -12100,6 +12100,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		function stop_func(evt) {
 			if (stop_play_status == true) {
 				if (stop == false) {
+					createjs.Sound.muted = true;
 					createjs.Ticker.paused = true;
 					stop_play.gotoAndStop(1);
 					spaceship.visible = false;
@@ -12146,6 +12147,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		function play_func(evt) {
 			if (stop_play_status == true) {
 				if (stop == true) {
+					createjs.Sound.muted = false;
 					createjs.Ticker.paused = false;
 					stop_play.gotoAndStop(0);
 					for (i = 0; i < myGame.length; i++) {
