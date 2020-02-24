@@ -11162,7 +11162,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		var music;
 		var oneTime;
 		var graySpaceship;
-		
+		var gameEnd;
 		var score;
 		var score1;
 		var score2;
@@ -11295,7 +11295,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		
 			stop = false;
 			music = true;
-		
+		gameEnd=false;
 			txt = new createjs.Text();
 			txt.font = "18px arial";
 		
@@ -11670,6 +11670,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		
 		//מה קורה במקרה שהמשחק נגמר
 		function endFunc() {
+			gameEnd=true;
 			gradeSum();
 			createjs.Ticker.removeEventListener("tick", ticker_func);
 			nextbtn.removeEventListener("click", sound_func("jumpAlien"));
@@ -12052,7 +12053,7 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 			if (music == true) {
 					var instance = createjs.Sound.play(whatSound);
 					if (whatSound == "background_sound") {
-						if(endScene.visible == false){
+						if(gameEnd==false){
 						setTimeout(function () {
 							sound_func("background_sound")
 						}, 32000);}
