@@ -12178,15 +12178,20 @@ p.nominalBounds = new cjs.Rectangle(-23,-147.5,47.5,180.1);
 		}
 		
 		function sound_func(whatSound) {
-			if (music == true) {
-				var instance = createjs.Sound.play(whatSound);
-				if (whatSound == "background_sound") {
-					setTimeout(function () {
-						sound_func("background_sound")
-					}, 32000);
-				}
-			}
-		}
+					if (music == true) {
+							var instance = createjs.Sound.play(whatSound);
+							if (whatSound == "background_sound") {
+								if(gameEnd==false){
+								var instance = createjs.Sound.play(whatSound);
+								setTimeout(function () {
+									sound_func("background_sound")
+								}, 32000);}
+								else{sound_stop_func("background_sound");}
+							}
+						else{var instance = createjs.Sound.play(whatSound);}
+						}
+					}
+
 		
 		
 		
