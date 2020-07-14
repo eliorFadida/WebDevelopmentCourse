@@ -1,0 +1,1527 @@
+﻿html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video, button {
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+    cursor: default;
+    -webkit-appearance: none;
+}
+
+.ui-textinput {
+    border: 1px solid #d5d7d4;
+    border-radius: 8px;
+    font-size: 20px;
+    direction: rtl;
+}
+
+    .ui-textinput:focus {
+        outline: none;
+    }
+
+    #animation_container {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+textarea, input#gameCode_text.ui-textinput {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -webkit-appearance: none;
+}
+
+
+iframe {
+    border: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+#gameArea {
+    overflow: hidden;
+    position: relative;
+    height: 94vh;
+    width: 99vw;
+    margin: 0 auto;
+}
+
+.hide {
+    display: none;
+}
+
+header {
+    background-color: #23094C;
+    width: 100%;
+    height: 45px;
+    position: relative;
+    direction: rtl;
+    display: block;
+    direction: rtl;
+    z-index: 3;
+    margin-top: -5px;
+    font-family:"Segoe UI";
+}
+
+/*לוגו*/
+#logo, #headline {
+    width: 35px;
+    height: 35px;
+    padding: 5px 5px;
+    direction: rtl;
+}
+
+#headline {
+    width: 200px;
+    height: 35px;
+}
+
+nav {
+    margin-top: -60px;
+    margin-left: 10px;
+    direction: rtl;
+}
+
+    nav ul {
+        list-style: none;
+        direction: rtl;
+    }
+
+        nav ul li {
+            display: inline-block;
+            float: left;
+            direction: rtl;
+        }
+
+            nav ul li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 5px 10px;
+                font-weight: 400;
+                font-size: 12pt;
+                font-family: 'Segoe UI';
+                direction: rtl;
+                text-decoration: none;
+            }
+
+                nav ul li a:hover {
+                    font-weight: 600;
+                    cursor: pointer;
+                    font-family: 'Segoe UI';
+                    direction: rtl;
+                    text-decoration: none;
+                }
+
+#container .popUp {
+    background-color: white;
+    width: 400px;
+    position: fixed;
+    top: 60px;
+    z-index: 4;
+    text-align: center;
+    font-weight: 600;
+    width: 500px;
+    border-radius: 25px;
+    padding: 10px;
+    padding-bottom: 25px;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    direction: rtl;
+    border: 2px solid black;
+    box-shadow: 10px 10px 10px #242121;
+}
+
+        #container .popUp a img {
+            width: 90px;
+            cursor: pointer;
+        }
+
+#container a.closeAbout img, #container a.closeHowToPlay img {
+    width: 30px;
+    cursor: pointer;
+}
+
+#container .bounceInDown {
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+#container #howToPlayDiv > img {
+    width: 50px;
+}
+
+#container a.closeHowToPlay:hover, a.closeAbout:hover {
+    cursor: pointer;
+}
+
+@-webkit-keyframes bounceInDown {
+    0%, 60%, 75%, 90%, 100% {
+        -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -3000px, 0);
+        transform: translate3d(0, -3000px, 0);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 25px, 0);
+        transform: translate3d(0, 25px, 0);
+    }
+
+    75% {
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0);
+    }
+
+    90% {
+        -webkit-transform: translate3d(0, 5px, 0);
+        transform: translate3d(0, 5px, 0);
+    }
+
+    100% {
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes bounceInDown {
+    0%, 60%, 75%, 90%, 100% {
+        -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -3000px, 0);
+        transform: translate3d(0, -3000px, 0);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 25px, 0);
+        transform: translate3d(0, 25px, 0);
+    }
+
+    75% {
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0);
+    }
+
+    90% {
+        -webkit-transform: translate3d(0, 5px, 0);
+        transform: translate3d(0, 5px, 0);
+    }
+
+    100% {
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+#loginPage {
+    display: block;
+    position: absolute;
+    top: 30%;
+    right: 45%;
+    font-weight: 400;
+}
+
+#headLine{
+    width:400px;
+    height:auto;
+    margin-right:37%;
+}
+
+#loginPage input {
+    display: inline-block;
+    position: static;
+    height: 20px;
+    font-size: 18px;
+    font-family: 'Segoe UI';
+    border-style: none;
+}
+
+#editorName, #editorPassword {
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+#loginPage div {
+    color: white;
+}
+
+#tryAgain {
+    display: block;
+    position: absolute;
+    color: white;
+    text-align: center;
+    width: 300px;
+    margin-right: -30px;
+    font-weight: 500;
+}
+
+#loginButtontooltip {
+    margin-right: 70px;
+    margin-top: -80px;
+}
+
+#loginButton {
+    width: 100px;
+    height: 60px;
+    background-color: #a98d31;
+    color: black;
+    font-weight: 500;
+    border-radius: 25px;
+    padding: 5px 10px 10px 10px;
+    margin-top: 30px;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128,0.5);
+    margin-right: 35px;
+}
+
+    #loginButton:disabled {
+        background-color: gray;
+        color: #4A4A4A;
+        box-shadow: none;
+        cursor:not-allowed;
+    }
+
+    #loginButton:enabled:hover {
+        cursor: pointer;
+        background-color: #baa41f;
+    }
+
+        #loginButton:enabled:active {
+            box-shadow: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+input, textarea, i {
+    outline: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+a.tooltip {
+   z-index: 2;
+}
+
+    a.tooltip span{
+        color:black;
+    }
+
+    a.tooltip:hover {
+        z-index: 3;
+    }
+
+    a.tooltip span.tooltip {
+        display: none;
+        /*transition: all .5s ease;
+        transition: display 200ms ease-out;*/
+    }
+
+    a.tooltip:hover span.tooltip {
+        z-index: 5;
+        display: block;
+        position: fixed;
+        left: inherit;
+        top: inherit;
+        margin-top: -70px;
+        width: 130px;
+        height: auto;
+        padding: 5px;
+        border-radius: 6px;
+        background-color: #ee8b20;
+        color: #000;
+        text-align: center;
+        font-size: 12px;
+        box-shadow: 2px 2px 3px #4A4A4A;
+        /*-webkit-animation: display 1s ease-in-out infinite alternate;
+        -moz-animation: display 1s ease-in-out infinite alternate;
+        animation: display 1s ease-in-out infinite alternate;*/
+    }
+
+    /*@-webkit-keyframes display {
+    from {
+       display:none;
+    }
+
+    to {
+
+    }
+}*/
+
+span.tooltip::after {
+    background-position: bottom right;
+    content: " ";
+    display: block;
+    position: absolute;
+    margin-top: -9.5%;
+    left: 88%;
+    width: 12px;
+    height: 12px;
+    /*background-color: #ee8b20;*/
+    background-image: linear-gradient(to bottom right, transparent, transparent,#ee8b20,#ee8b20,#ee8b20);
+    margin-left: -5px;
+    box-shadow: 2px 2px 2px #4A4A4A;
+    transform: translateY(100%) translateX(-50%) rotate(45deg);
+}
+
+/*#IspassCBtooltip{
+    margin-right:-100px;
+}*/
+
+#toTheGame {
+    display: block;
+    position: absolute;
+    margin-top: -60px;
+    margin-right: 1250px;
+    color: white;
+    width: 50px;
+    height: 20px;
+    font-weight: 400;
+    background-color: blueviolet;
+    align-content: center;
+    padding: 5px 20px;
+    border-radius: 18px;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128,0.5);
+}
+
+#toTheGame:hover {
+    cursor: pointer;
+    background-color: #baa41f;
+}
+
+#toTheGame:active {
+    box-shadow: none;
+}
+
+#gameStoke {
+    color: white;
+    display: block;
+    position: absolute;
+    width: 450px;
+    right: 40%;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+#defaultConteiner {
+    display: block;
+    position: absolute;
+    margin-top:2%;
+}
+
+#saveButtontooltip {
+    margin-top: -2.5%;
+}
+
+#ImageButtonquestImgtooltip {
+    margin-top: 75px;
+    margin-right: 350px;
+}
+
+body {
+    direction: rtl;
+    height: 100%;
+    width: 1288px;
+    display: block;
+    position: fixed;
+    font-family: 'Segoe UI';
+    background-image: url('../images/background-.png');
+    background-size:cover;
+    background-repeat:no-repeat;
+    /*background-color: rgba(32, 13, 75, 0.90);*/
+    overflow: no-display;
+}
+
+#addNewGame {
+    position: absolute;
+    display: block;
+    right: 260px;
+    top: 50px;
+    color: white;
+    width:400px;
+}
+
+#creatNewGameLbl {
+    color:white;
+    position: absolute;
+    display: block;
+    top: -10px;
+}
+
+
+#nameLbl, #gameName {
+    position: static;
+    display: inline-block;
+    color: white;
+}
+
+#plusSigntooltip{
+    margin-right:18.5%;
+}
+
+.CharacterCount {
+    height: 20px;
+    font-size: 18px;
+    font-family: 'Segoe UI';
+    border-radius: 6px;
+    border-style: none;
+}
+
+#nameLblempty {
+    position: absolute;
+    display: block;
+    color: white;
+    top: 45px;
+}
+
+.aspNetDisabled CharacterCount, #GridView1.CharacterCount {
+    background-color: none;
+    border: none;
+    width: 220px;
+}
+
+/*.timePerQuestClass {
+    border-radius: 5px;
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    background-color: wheat;
+    outline: 0;
+    /*-webkit-appearance: none;
+    -moz-appearance: none;*/
+/*}*/
+
+    /*הגדרות לחלון הפופ-אפ*/
+.PopUp {
+    position: absolute;
+    display: block;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    width: 400px;
+    height: initial;
+    right: 15%;
+    top: 40%;
+    border: 0.5px solid black;
+    border-radius: 12px;
+    font: 18px Segoe UI, black;
+    text-align: center;
+    box-shadow: 10px 10px 10px #242121;
+    align-content:center;
+}
+
+    .PopUp span#popUpmessage {
+        display: inline-block;
+        position: static;
+        margin-top: -10px;
+        line-height:1.7;
+    }
+
+    .PopUp input {
+        display: inline-block;
+        position: static;
+        float: right;
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-top: 25px;
+        border: none;
+        border-radius: 8px;
+        font: 16px Segoe UI, black;
+        text-align: center;
+        padding: 5px 7px 5px 7px;
+        width: 100px;
+        cursor: pointer;
+        bottom: 15px;
+    }
+
+        .PopUp input:hover {
+            border: 0.5px solid black;
+            padding: 4px 6px 4px 6px;
+            animation-duration: 0.3s;
+            animation-fill-mode: both;
+        }
+
+        #OkBtn0 {
+            background-color: darkorange;
+        }
+
+#myExitBtn {
+    background-color: cadetblue;
+}
+
+#backTo{
+    color:white;
+    font-weight:400;
+}
+
+#Panel1 input:disabled, span.aspNetDisabled.answerLabelClass {
+    opacity: 0.5;
+}
+
+#Panel1 input:enabled, span.answerLabelClass {
+    opacity: 1;
+}
+
+/*הגדרות לחלון האפור*/
+#grayWindows, #Panel1 #grayWindows {
+    background-color: rgba(128, 128, 128,0.5);
+    animation-fill-mode: both;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+    #gridViewDiv {
+    position: absolute;
+    display: block;
+    width: 800px;
+    height: 400px;
+    right: 260px;
+    top: 160px;
+}
+
+#GridView1 , #innerGridView {
+    background-color:none;
+    border-color :none;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#GridView1 {
+    position: absolute;
+    display: inline-block;
+    height: 400px;
+    overflow-y: scroll;
+    width: 800px;
+    z-index: 1;
+}
+
+
+    #GridView1 table {
+        display: block;
+        position: static;
+        width: 790px;
+    }
+
+#gridViewDiv tr {
+    display: block;
+    position: static;
+    width: 770px;
+}
+
+#gridViewDiv #GridView1 tbody tr:first-child {
+    position: fixed;
+    width: 770px;
+    background-color: transparent;
+    margin-top: -40px;
+}
+
+#GridView1 input {
+    margin-bottom: -5px;
+}
+
+span.checkBoxClass input {
+    border-radius: 8px;
+    position:relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+span.checkBoxClass input:hover {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    /*span.checkBoxClass input[type='checkbox']:checked {
+        width: 30px !important;
+        height: 30px !important;
+        margin: 5px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: 2px solid lightblue;
+        box-shadow: none;
+        font-size: 2em;
+    }*/
+
+input[type='checkbox']:checked {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius:2px;
+    width:12px;
+    height:12px;
+    border:0.5px solid gray;
+    background-color:white;
+
+}
+
+    input[type='checkbox']:checked:after {
+        position: relative;
+        icon: url('../images/v.png');
+        content: '\2713';
+        color: forestgreen;
+        line-height: 1rem;
+        font-size: 1rem;
+        font-weight:100;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    span.aspNetDisabled.checkBoxClass:hover, span.aspNetDisabled.checkBoxClass input:hover, span.aspNetDisabled.checkBoxClass.parent:hover {
+        cursor: not-allowed;
+    }
+
+td, th {
+    border-radius: 8px;
+}
+
+th {
+    height:20px;
+    background-color:blueviolet;
+}
+
+#gridViewDiv th {
+    height: 30px;
+}
+
+#GridView1 tr:hover td, #innerGridView tr:hover td {
+    background-color: aliceblue;
+}
+
+#GridView1 td:nth-child(2n) input{
+    display:inline-block;
+    position:static;
+}
+
+
+#GridView1 td:nth-child(2n) input:first-child {
+    margin-bottom: -5px;
+}
+
+#GridView1 td:nth-child(2n) input:nth-child(2n) {
+    height: 20px;
+    margin-bottom:7px;
+    background-color:none;
+    font-size:14px;
+}
+
+
+#gridViewDiv td:first-child {
+    width: 5.3%;
+}
+
+#gridViewDiv #GridView1 tbody tr:first-child th:first-child {
+    width: 8.2%;
+    margin-right: 0;
+}
+
+#gridViewDiv td:nth-child(2n) {
+    width: 30%;
+}
+
+#gridViewDiv tr td:nth-child(2) a input {
+    margin-right: -27%;
+    margin-left: 3%;
+}
+
+    #gridViewDiv td:nth-child(2n)>span{
+    margin-left: -15%;
+    margin-right:3%;
+}
+
+    #gridViewDiv #GridView1 tbody tr:first-child th:nth-child(2n) {
+        width: 46.6%;
+    }
+
+#gridViewDiv td:nth-child(3n) {
+    width: 10%;
+}
+
+#gridViewDiv #GridView1 tbody tr:first-child th:nth-child(3n) {
+    width: 15%;
+}
+
+#gridViewDiv td:nth-child(4n) {
+    width: 10%;
+}
+
+#gridViewDiv #GridView1 tbody tr:first-child th:nth-child(4n) {
+    width: 16.6%;
+}
+
+#gridViewDiv td:nth-child(5n) {
+    width: 6.5%;
+}
+
+#gridViewDiv #GridView1 tbody tr:first-child th:nth-child(5n) {
+    width: 10%;
+}
+
+#gridViewDiv td:nth-child(6n) {
+    width: 5%;
+}
+
+#gridViewDiv #GridView1 tbody tr:first-child th:nth-child(6n) {
+    width: 6.6%;
+}
+
+
+.questNameLblclass {
+    width: 50px;
+    overflow: hidden;
+}
+
+#innerGridDiv {
+    position: absolute;
+    display: inline-block;
+    width: 450px;
+    height: 535px;
+    right: 890px;
+    top: 120px;
+}
+
+#GridView1 td, #innerGridView td {
+    background-color: lightgray;
+}
+
+#innerGridView {
+    position: absolute;
+    display: inline-block;
+    height: 505px;
+    overflow-y: scroll;
+    width: 450px;
+}
+
+    #innerGridView span.tooltip {
+        width: 60px;
+        margin-top:-60px;
+    }
+
+        #innerGridView span.tooltip::after {
+            margin-top: -18%;
+           left:70%;
+        }
+
+        #innerGridView::-webkit-scrollbar, #GridView1::-webkit-scrollbar {
+            background: none;
+        }
+
+    #innerGridView::-webkit-scrollbar-thumb, #GridView1::-webkit-scrollbar-thumb {
+        background: blueviolet;
+        border-radius: 8px;
+    }
+
+        #innerGridView::-webkit-scrollbar-thumb:hover, #GridView1::-webkit-scrollbar-thumb:hover {
+            box-shadow: 2px 2px 2px rgba(128, 128, 128,0.5);
+        }
+
+    #innerGridView table {
+        display: block;
+        position: static;
+        width: 440px;
+    }
+
+#innerGridDiv #innerGridView tbody tr:first-child {
+    position: fixed;
+    width: 440px;
+    background-color: none;
+    margin-top: -26px;
+}
+
+    #Panel1 #innerGridDiv #innerGridView tbody tr:first-child th {
+        display: inline-block;
+        position: static;
+        float: right;
+        margin-right:2px;
+        padding-right:5px;
+        font-size:12px;
+        font-weight:500;
+    }
+
+#Panel1 #innerGridDiv #innerGridView tbody tr td:first-child{
+    width: 10.5%;
+}
+
+#Panel1 #innerGridDiv #innerGridView tbody tr:first-child th:first-child{
+    width: 9%;
+    margin-right: 0;
+}
+
+#Panel1 #innerGridDiv #innerGridView tbody tr td:nth-child(2n){
+    width: 56%;
+    text-align:right;
+}
+
+#Panel1 #innerGridDiv #innerGridView tbody tr:first-child th:nth-child(2n){
+    width: 63%;
+}
+#Panel1 #innerGridDiv #innerGridView tbody tr td:nth-child(3n) {
+    width: 10%;
+}
+
+#Panel1 #innerGridDiv #innerGridView tbody tr:first-child th:nth-child(3n) {
+    width: 8%;
+}
+#Panel1 #innerGridDiv #innerGridView tbody tr td:nth-child(4n) {
+    width: 10%;
+}
+
+#Panel1 #innerGridDiv #innerGridView tbody tr:first-child th:nth-child(4n) {
+    width: 9%;
+}
+
+    #innerGridView input {
+        width: 30px;
+        height: 30px;
+    }
+
+
+#Panel3 {
+    position: static;
+    display: block;
+    background-image: url('../images/spaceship1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 40px;
+    margin-top:20px;
+}
+
+#ImageButtonquestImg {
+    top: 140px;
+    right: 351px;
+}
+
+
+
+    #ImageButtonquestImg {
+    position: absolute;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 41px;
+    width: 47px;
+}
+
+    #ImageButtonquestImg.questImageClassTrue {
+        width: 100px;
+        height: 130px;
+        top: 55px;
+        right: 277px;
+        border-radius: 12px;
+        border: 1px solid gray;
+    }
+
+textarea#questionText{
+    margin-right:-15px;
+}
+
+    textarea#questionText::-webkit-input-placeholder {
+       
+    }
+
+
+#QuestCuontLbl {
+    position: absolute;
+    display: block;
+    top: 155px;
+}
+
+ #QuestCuontLbl.IfImageFalse {
+        right: 300px;
+    }
+
+    #QuestCuontLbl.IfImageTrue {
+        right: 225px;
+    }
+
+.answers, #qeustion {
+    position: absolute;
+    display: block;
+    text-align: center;
+    line-height: 25px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 12px;
+    font-family: Segoe UI;
+    top: 17px;
+    right: 192px;
+}
+
+#LabelQuest.answers {
+    top: 10px;
+    right: 182px;
+    font-size: 16px;
+}
+
+div.answers {
+        width: 120px;
+        height: 80px;
+  }
+
+div#answer1, #answer1tooltip {
+    top: 338px;
+    right: 307px;
+}
+
+div#answer2, #answer2tooltip {
+    top: 338px;
+    right: 447px;
+}
+
+div#answer3, #answer3tooltip {
+    top: 330px;
+    right: 173px;
+}
+
+div#answer4, #answer4tooltip {
+    top: 330px;
+    right: 590px;
+}
+
+div#answer5, #answer5tooltip {
+    top: 312px;
+    right: 50px;
+}
+
+div#answer6, #answer6tooltip {
+    top: 318px;
+    right: 705px;
+}
+
+    #file {
+        width: 125px;
+    }
+
+#saveButton, #goBackButton {
+    position: absolute;
+    display: block;
+    width: 134px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+}
+
+#saveButton {
+    background-color: cadetblue;
+}
+
+#goBackButton {
+    background-color: darkorange;
+}
+
+/*.newQuest*/
+
+a.tooltip:active + a.tooltip div {
+    -webkit-animation: display 1s ease-in-out infinite alternate;
+    -moz-animation: display 1s ease-in-out infinite alternate;
+    animation: display 1s ease-in-out infinite alternate;
+    animation-delay: 3s;
+}
+
+@-webkit-keyframes display {
+    from {
+        background-color: white;
+    }
+
+    to {
+      background-color: darkorange;
+    }
+}
+
+#goBackButton {
+    margin-top: -60px;
+    margin-right: 260px;
+}
+
+#goBackButton, #saveButton {
+    font-family: 'Segoe UI';
+}
+
+    #goBackButton:hover, #saveButton:enabled:hover {
+        box-shadow: 2px 2px 2px rgba(128, 128, 128,0.5);
+    }
+
+    #saveButton:enabled, #goBackButton:enabled {
+        cursor: pointer;
+    }
+
+    #saveButton, #saveButtontooltip {
+        top: 550px;
+        right: 380px;
+    }
+
+    .textTypeImage {
+        position: absolute;
+        display: block;
+        top: 30px;
+        right: 42px;
+        width: 28px;
+        height: 16px;
+    }
+
+.answerLabelClass {
+    position: absolute;
+    display: block;
+    width: 70px;
+    right: 20px;
+}
+
+#Image1 {
+    position: absolute;
+    display: block;
+    height: 53px;
+    width: 66px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#ImageforUpload1 {
+    position: absolute;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 35px;
+    top: 207px;
+    right: 440px;
+}
+
+#FileUpload {
+    visibility: hidden;
+}
+
+.FileUpload {
+    visibility: hidden;
+    position:absolute;
+    display:block;
+}
+
+#GridView1 td:nth-child(2n) input:nth-child(2n).FileUpload{
+    height:1px;
+    margin-top:0;
+}
+
+#deleteImg0 {
+    position: absolute;
+    display: block;
+    height: 27px;
+    width: 25px;
+    top: 120px;
+    right: 580px;
+}
+
+
+#questionText {
+    position: absolute;
+    display: block;
+    width: 253px;
+    height: 139px;
+    top: 38px;
+    right: 98px;
+    border-radius: 12px;
+    font: 16px 'Segoe UI';
+}
+
+    #questionText.questImageTrue {
+        width: 170px;
+        height: 139px;
+        right: 105px;
+    }
+
+
+#answersList {
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 15px;
+    margin-top: 200px;
+}
+
+#answersList tbody {
+    position: absolute;
+    display: inline-block;
+    height: 10px;
+    width: 800px;
+}
+
+    #answersList tr {
+        display: inline-block;
+        position: absolute;
+        height: 10px;
+        width: 800px;
+    }
+
+        #answersList tr td {
+            display:inline-block;
+            position:static;
+            width:50px;
+        }
+
+            #answersList tr td label {
+                display: block;
+                position: absolute;
+                font-size: 6px;
+                margin-right: -25px;
+                margin-top: -25px;
+                background-image: url('../images/v.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position-x: center;
+                width: 25px;
+                height: 25px;
+                color: #4A4A4A;
+            }
+
+
+#answersList tr:first-child {
+    margin-right: 350px;
+}
+
+#answersList tr:nth-child(2n) {
+    margin-right: 490px
+}
+
+
+#answersList tr:nth-child(3n) {
+    margin-right: 220px;
+    margin-top: -3px;
+}
+
+#answersList tr:nth-child(4n) {
+    margin-right: 630px;
+    margin-top: -3px;
+}
+
+#answersList tr:nth-child(5n) {
+    margin-right: 110px;
+    margin-top: -13px;
+}
+
+#answersList tr:nth-child(6n) {
+    margin-right: 750px;
+    margin-top: -13px;
+}
+
+.answer1deleteClass, .answer2deleteClass, .answer3deleteClass, .answer4deleteClass, .answer5deleteClass, .answer6deleteClass {
+    position: absolute;
+    display: block;
+    height: 22px;
+    width: 20px;
+    margin-right: 100px;
+    margin-top: -13px;
+    border-radius:10px;
+}
+
+
+.answerImageClassTrue, .ansText1Class, .ansText2Class, .ansText3Class, .ansText4Class, .ansText5Class, .ansText6Class {
+        position: absolute;
+        display: block;
+        visibility: visible;
+        width: 110px;
+        height: 140px;
+        word-break: keep-all;
+        font-family: Segoe UI;
+        font-size: 12px;
+        border-radius: 12px;
+    }
+
+.answerImageClassTrue {
+    border: 1px solid gray;
+    margin-top: -20px;
+    margin-right: -10px;
+   padding:2px;
+}
+
+#answerImage1.answerImageClassTrue {
+    top: 30px;
+}
+
+#answerImage2.answerImageClassTrue {
+   top: 30px;
+   right:5px;
+}
+
+
+#answerImage6.answerImageClassTrue{
+    margin-right:10px;
+    margin-top:0px;
+}
+/*לייבלים לספירת תווים*/
+span.ansText1Class {
+    top: 475px;
+    right: 380px;
+    width: 80px;
+    height: 30px;
+}
+
+span.ansText2Class {
+    top: 475px;
+    right: 515px;
+    width: 80px;
+    height: 30px;
+}
+
+span.ansText3Class {
+    top: 457px;
+    right: 240px;
+    width: 80px;
+    height: 30px;
+}
+
+span.ansText4Class {
+    top: 457px;
+    right: 655px;
+    width: 80px;
+    height: 30px;
+}
+
+span.ansText5Class {
+    top: 440px;
+    right: 115px;
+    width: 80px;
+    height: 30px;
+}
+
+span.ansText6Class {
+    top: 440px;
+    right: 785px;
+    width: 80px;
+    height: 30px;
+}
+
+textarea.ansText1Class, .answer1deleteClass {
+    top: 350px;
+    right: 295px;
+}
+
+textarea.ansText2Class, .answer2deleteClass {
+    top: 350px;
+    right: 440px;
+}
+
+textarea.ansText3Class, .answer3deleteClass{
+    top: 333px;
+    right: 163px;
+}
+
+textarea.ansText4Class, .answer4deleteClass {
+    top: 333px;
+    right: 580px;
+}
+
+textarea.ansText5Class, .answer5deleteClass{ 
+    top: 315px;
+    right: 37px;
+}
+
+
+textarea.ansText6Class, .answer6deleteClass {
+    top: 315px;
+    right: 710px;
+}
+
+div.answers textarea {
+    font: 16px 'Segoe UI';
+}
+
+.answerImageClass {
+    position: absolute;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 33px;
+    height: 31px;
+    top: 61px;
+    right: 38px;
+    border-radius: 12px;
+}
+
+#addNewQuestion, #addNewQuestionText {
+    position: absolute;
+    display: block;
+    top: 41px;
+    right: 757px;
+}
+
+#addNewQuestionText {
+    top: 80px;
+    right: 730px;
+    color: white;
+    font-family: Segoe UI;
+    font-weight:400;
+}
+
+
+ a.tooltip#addNewQuestionS:hover ~ #addNewQuestionText {
+    font-weight: 500;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white;
+}
+
+
+#addNewQuestiontooltip {
+    top: 85px;
+    right: 753px;
+}
+
+    .questNameLblclass {
+        text-overflow: ellipsis;
+        width: 50px;
+        white-space: nowrap;
+        /*text-overflow: clip;*/
+        overflow: hidden;
+        line-break: initial;
+        line-break: normal;
+        margin-right:20px;
+    }
+
+div #condition {
+    position: static;
+    display: block;
+    width: 200px;
+    color: white;
+    margin-right: 890px;
+    margin-top:-540px;
+}
+    div #condition span {
+        display: inline-block;
+        position: static;
+        padding-right: 40px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top:3px;
+        background-image: url('../images/x.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: right;
+        background-position-y: top;
+        height: 15px;
+        line-height: 1;
+    }
+
+        div #condition span:first-child {
+            font-weight: 500;
+            padding-bottom: 10px;
+            padding-right: 0;
+            background-image:none;
+            margin-top:0;
+            margin-bottom:-5px;
+        }
+
+.custom-select {
+    position: relative;
+    font-family: 'Segoe UI';
+    margin-left:-20px;
+    margin-right:10px;
+}
+
+    .custom-select select {
+        display: none;
+    }
+
+.select-selected{
+    background-color: #ee8b20;
+    border-radius: 12px;
+    height: 20px;
+    margin-top: -20px;
+}
+
+    /*.select-selected:after{
+        position: absolute;
+        content: "";
+        top: 14px;
+        right: 70px;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-color: #fff transparent transparent transparent;
+    }
+
+    .select-selected.select-arrow-active:after {
+        border-color: transparent transparent #fff transparent;
+        top: 7px;
+    }*/
+
+.select-items div, .select-selected {
+    color: #ffffff;
+    padding: 3px 3px;
+    border: 1px solid transparent;
+    background-color: #ee8b20;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all .08s ease;
+    /*transform: translateY(0);*/
+}
+
+.select-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-radius: 12px;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: darkorange;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128,0.5);
+}
+
+
+
+/*#addNewQuestionText:hover {
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}*/
+

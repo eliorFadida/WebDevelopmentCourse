@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html lang="he">
+<head>
+    <meta charset="utf-8">
+
+    <link rel="icon" href="images/starIcon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>מסיבה בכוכבים</title>
+    <meta name="description" content="starParty" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="names" />
+
+    <!-- CSS -->
+    <link href="styles/StyleSheet.css" rel="stylesheet" />
+    <!-- Scripts -->
+    <!--jQuery library-->
+    <script src="scripts/jquery-1.12.0.min.js"></script>
+    <!--הקוד שמפעיל את תפריט הניווט-->
+    <script src="scripts/createjs-2015.11.26.min.js"></script>
+    <script src="scripts/JavaScript.js"></script>
+    
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <!--קישור לדף עצמו כדי להתחיל את המשחק מחדש בלחיצה על הלוגו-->
+            <a href="indextest.html">
+                <img id="logo" src="images/starIcon.png"/> <!--הלוגו של המשחק שלכם-->
+                <img id="headline" src="images/headline.png" />
+            </a>
+            <!--תפריט הניווט בראש העמוד-->
+            <nav>
+                <ul>
+                    <li><a class="editor" href="EditorLogin.aspx">עורך</a></li>
+                    <li><a class="about">אודות</a></li>
+                    <li><a class="howToPlay">איך משחקים?</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="aboutDiv" class="popUp bounceInDown hide">
+            <a class="closeAbout">
+                <img src="images/x.png" />
+            </a>
+            <p>אופיין ופותח על ידי נוי הרשקוביץ וטל ליבנה</p>
+            <p>במסגרת הקורסים סביבות לימוד אינטראקטיביות ותכנות אינטראקטיבי</p>
+            <p>תש"פ 2020</p>
+            <a href="https://www.hit.ac.il/">
+                <img id="HIT_logo" src="images/h.i.t logo.png" />
+            </a>
+            <p>כל הזכויות על הסאונד במשחק שמורות לאתר  <a href="https://freesound.org/">freesound</a></p>
+        </div>
+        <div id="howToPlayDiv" class="popUp bounceInDown hide">
+            <a class="closeHowToPlay">
+                <img src="images/x.png" />
+            </a>
+            <p>
+                המשחק מיועד לשני שחקנים,
+                <br />כאשר לכל שחקן בתורו מופיעה שאלה.
+            </p>
+            <p>
+                יש לבחור את התשובה הנכונה באמצעות לחיצה עם העכבר
+                <br /> אם מופיע שעון- יש לעשות זאת לפני שנגמר הזמן הקצוב.
+            </p>
+            <p>
+               השחקן שיענה נכונה על הכי הרבה שאלות
+                <br />יקבל את הציון הגבוה יותר וינצח במשחק.
+            </p>
+            <p>בהצלחה!</p>
+            <img src="images/alien.png" />
+        </div>
+
+        <div id="gameArea" class="">
+            <!--src = הקישור של דף המשחק שלכם (לא קובץ האנימייט)-->
+            <iframe id="gameIframe" src="starParty_Tal_Noy.html" frameBorder="0" allowfullscreen="">Browser not compatible.</iframe>
+        </div>
+    </div>
+</body>
+
+</html>
